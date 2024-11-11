@@ -20,6 +20,11 @@ header {
     background-size: cover;
 }
 
+#cliffs header {
+    background: no-repeat lightgrey url(images/forest_cliff.jpg);
+    background-size: cover;
+}
+
 .main-header {
     background-color: rgba(255, 255, 255, 0.8);
     width: 700px;
@@ -335,4 +340,37 @@ form .button input[type="submit"] {
 
 form .button input[type="submit"]:hover {
     background-color: #356bb1;
+}
+
+/* Cliffs Table Styling */
+.cliff-table {
+    width: 100%;
+    border-spacing: 20px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.cliff-image-cell {
+    border: none;
+    position: relative;
+    vertical-align: top;
+}
+
+.cliff-image {
+    border: none;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.cliff-caption {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: #85281B;
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 10px 0;
+    text-align: center;
 }
