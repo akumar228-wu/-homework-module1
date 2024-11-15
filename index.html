@@ -36,7 +36,7 @@
         <section id="timeofday">
             <span>Your Current Local Time: </span>
             <span id="clock" class="highlight"></span>
-        </section>        
+        </section>
 
         <!-- Main content section -->
         <main>
@@ -63,27 +63,7 @@
 
         <!-- Partners section showcasing images -->
         <section>
-            <ul id="partners">
-                <!-- Individual partner image placeholders -->
-                <li class="partner">
-                    <img src="images/partners/partner-bustour.png" alt="Partner 1">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-cabinrental.png" alt="Partner 2">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-campingadv.png" alt="Partner 3">
-                </li>
-                <li class="partner">
-                    <img src="images/partners//partner-collegetours.png" alt="Partner 4">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-rentalbike.png" alt="Partner 5">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-tourgroup.png" alt="Partner 6">
-                </li>
-            </ul>
+            <ul id="partners"></ul>
         </section>
 
         <!-- Footer section with copyright, social media, and disclaimer -->
@@ -140,5 +120,24 @@
     }
 
     setInterval(currentTime, 1000);
+
+    var partners = [];
+    var fileNames = [];
+    var imageList = [];
+    var openList = "<li class='partner'>";
+    var closeList = "</li>";
+
+
+    for (var i = 0; i < 6; i++) {
+        fileNames.push("partner-" + (i === 0 ? "bustour" : i === 1 ? "cabinrental" : i === 2 ? "campingadv" : i === 3 ? "collegetours" : i === 4 ? "rentalbike" : "tourgroup"));
+    }
+
+    for (var i = 0; i < fileNames.length; i++) {
+        partners.push("<img src='images/partners/" + fileNames[i] + ".png' alt='Partner " + (i + 1) + "'>");
+        imageList.push(openList + partners[i] + closeList);
+    }
+
+    document.getElementById("partners").innerHTML = imageList.join("");
+
 
 </script>
