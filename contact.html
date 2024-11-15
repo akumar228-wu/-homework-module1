@@ -5,7 +5,7 @@
     <title>Great Cliffs</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-     <!-- Font Awesome -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
@@ -97,27 +97,7 @@
 
         <!-- Partners section showcasing images -->
         <section>
-            <ul id="partners">
-                <!-- Individual partner image placeholders -->
-                <li class="partner">
-                    <img src="images/partners/partner-bustour.png" alt="Partner 1">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-cabinrental.png" alt="Partner 2">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-campingadv.png" alt="Partner 3">
-                </li>
-                <li class="partner">
-                    <img src="images/partners//partner-collegetours.png" alt="Partner 4">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-rentalbike.png" alt="Partner 5">
-                </li>
-                <li class="partner">
-                    <img src="images/partners/partner-tourgroup.png" alt="Partner 6">
-                </li>
-            </ul>
+            <ul id="partners"></ul>
         </section>
 
         <!-- Footer section with copyright, social media, and disclaimer -->
@@ -146,3 +126,23 @@
 </body>
 
 </html>
+
+<script>
+    var partners = [];
+    var fileNames = [];
+    var imageList = [];
+    var openList = "<li class='partner'>";
+    var closeList = "</li>";
+
+
+    for (var i = 0; i < 6; i++) {
+        fileNames.push("partner-" + (i === 0 ? "bustour" : i === 1 ? "cabinrental" : i === 2 ? "campingadv" : i === 3 ? "collegetours" : i === 4 ? "rentalbike" : "tourgroup"));
+    }
+
+    for (var i = 0; i < fileNames.length; i++) {
+        partners.push("<img src='images/partners/" + fileNames[i] + ".png' alt='Partner " + (i + 1) + "'>");
+        imageList.push(openList + partners[i] + closeList);
+    }
+
+    document.getElementById("partners").innerHTML = imageList.join("");
+</script>
