@@ -89,55 +89,9 @@
             </div>
         </footer>
     </div>
+
+    <script src="js/digclock.js"></script>
+    <script src="js/site_scripts.js"></script>
 </body>
 
 </html>
-
-<script>
-    function currentTime() {
-        var date = new Date();
-        var hour = date.getHours();
-        var minute = date.getMinutes();
-        var second = date.getSeconds();
-        var ampm = "AM";
-
-        if (minute < 10) {
-            minute = "0" + minute;
-        }
-        if (second < 10) {
-            second = "0" + second;
-        }
-
-        if (hour >= 12) {
-            ampm = "PM";
-        }
-        if (hour > 12) {
-            hour -= 12;
-        }
-
-        var time = hour + ":" + minute + ":" + second + " " + ampm;
-        document.getElementById("clock").innerText = time;
-    }
-
-    setInterval(currentTime, 1000);
-
-    var partners = [];
-    var fileNames = [];
-    var imageList = [];
-    var openList = "<li class='partner'>";
-    var closeList = "</li>";
-
-
-    for (var i = 0; i < 6; i++) {
-        fileNames.push("partner-" + (i === 0 ? "bustour" : i === 1 ? "cabinrental" : i === 2 ? "campingadv" : i === 3 ? "collegetours" : i === 4 ? "rentalbike" : "tourgroup"));
-    }
-
-    for (var i = 0; i < fileNames.length; i++) {
-        partners.push("<img src='images/partners/" + fileNames[i] + ".png' alt='Partner " + (i + 1) + "'>");
-        imageList.push(openList + partners[i] + closeList);
-    }
-
-    document.getElementById("partners").innerHTML = imageList.join("");
-
-
-</script>

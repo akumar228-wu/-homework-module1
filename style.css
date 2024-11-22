@@ -327,7 +327,7 @@ form .button {
 }
 
 form .button input[type="submit"] {
-    background-color: #4977d1;
+    /* background-color: #4977d1; */
     color: #fff;
     font-size: 1.2em;
     font-weight: bold;
