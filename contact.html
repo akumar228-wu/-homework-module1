@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 
-<body id="contact">
+<body id="contact" onLoad="disableButton(true)" >
     <!-- Container to wrap everything -->
     <div id="container">
 
@@ -90,13 +90,13 @@
 
                     <!-- Random Codes -->
                     <div class="randomcode">
-                        <input type="text" name="randomcode" placeholder="Enter characters">
+                        <input id="codeentered" type="text" name="randomcode" placeholder="Enter characters">
                         <p id="codes"></p>
                     </div>
 
 
                     <div class="button">
-                        <input type="submit" value="Inquire">
+                        <input id="submit" type="submit" value="Inquire">
                     </div>
                 </fieldset>
             </form>
